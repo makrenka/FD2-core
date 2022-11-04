@@ -1,16 +1,21 @@
 import { Component } from "../../core";
+import './button.scss';
 
 export class Button extends Component {
     constructor() {
         super();
         this.state = {
-            isActive: false,
+            count: 1,
         }
     }
 
+    
+
     render() {
         return `
-            <button>Click</button>
+            <button class="plus">+</button>
+            <span>${this.state.count}</span>
+            <button class="minus">-</button>
         `
     }
 }

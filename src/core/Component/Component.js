@@ -7,19 +7,11 @@ export class Component extends HTMLElement {
 
     setState(callback) {
         this.state = callback(this.state);
-        this.innerHTML = this.render()
-            .toString()
-            .trim()
-            .replaceAll(/true|false/gi, "")
-            .replaceAll(",", "");
+        this.innerHTML = this.render();
     }
 
     connectedCallback() {
-        this.innerHTML = this.render()
-            .toString()
-            .trim()
-            .replaceAll(/true|false/gi, "")
-            .replaceAll(",", "");
+        this.innerHTML = this.render();
         this.componentDidMount();
         this.registerEvents();
     }
